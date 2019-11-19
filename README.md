@@ -2,9 +2,7 @@
 
 涵盖
 ```
-elasticsearch（6.8.3）
-    kibana（6.8.3）
-    apm-server（6.8.3）
+gitlab-ce（laster）
 ```
 
 流程
