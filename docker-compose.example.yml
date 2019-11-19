@@ -19,8 +19,8 @@ services:
       - ${DOCKER_ENV_PWD}/etc/gitlab-ce/logs:/var/log/gitlab
       - ${DOCKER_ENV_PWD}/etc/gitlab-ce/config:/etc/gitlab
     environment:
-      GITLAB_OMNIBUS_CONFIG:
-        external_url 'http:/gitlab.hunzsig.org'
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.hunzsig.org'
         unicorn['worker_processes'] = 2
         unicorn['worker_memory_limit_min'] = "100 * 1 << 20"
         unicorn['worker_memory_limit_max'] = "250 * 1 << 20"
