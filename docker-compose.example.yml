@@ -1,7 +1,7 @@
 version: "3.3"
 
 networks:
-  web:
+  gitlab:
     driver: bridge
     ipam:
       config:
@@ -35,5 +35,5 @@ services:
         # gitlab_rails['smtp_tls'] = true
         # gitlab_rails['gitlab_email_from'] = 'xxxx@xx.com'
     networks:
-      web:
+      gitlab:
         ipv4_address: ${NETWORK_GITLAB_CE}
