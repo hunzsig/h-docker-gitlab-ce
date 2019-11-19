@@ -20,7 +20,10 @@ services:
       - ${DOCKER_ENV_PWD}/etc/gitlab-ce/config:/etc/gitlab
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        # external_url 'http://192.168.20.220'
+        external_url 'http:/gitlab.hunzsig.org'
+        unicorn['worker_processes'] = 2
+        unicorn['worker_memory_limit_min'] = "50MB"
+        unicorn['worker_memory_limit_max'] = "250MB"
         gitlab_rails['gitlab_shell_ssh_port'] = ${PORT_GITLAB_CE}
         gitlab_rails['time_zone'] = 'Asia/Shanghai'
         # 需要配置到 gitlab.rb 中的配置可以在这里配置，每个配置一行，注意缩进。
