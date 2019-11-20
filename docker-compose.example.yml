@@ -5,7 +5,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: ${NETWORK_WEB}
+        - subnet: ${NETWORK}
 
 services:
 
@@ -15,9 +15,9 @@ services:
     ports:
       - ${PORT_GITLAB_CE}:80
     volumes:
-      - ${DOCKER_ENV_PWD}/etc/gitlab-ce/data:/var/opt/gitlab
-      - ${DOCKER_ENV_PWD}/etc/gitlab-ce/logs:/var/log/gitlab
-      - ${DOCKER_ENV_PWD}/etc/gitlab-ce/config:/etc/gitlab
+      - ./etc/gitlab-ce/data:/var/opt/gitlab
+      - ./etc/gitlab-ce/logs:/var/log/gitlab
+      - ./etc/gitlab-ce/config:/etc/gitlab
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://gitlab.hunzsig.org'
